@@ -1,7 +1,3 @@
-# osquery-defense-kit-fleet
-forked from https://github.com/0xBEN/osquery-defense-kit
-
-
 # Chainguard Queries
 Originally forked from https://github.com/chainguard-dev/osquery-defense-kit. 
 
