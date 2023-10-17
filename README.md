@@ -19,8 +19,8 @@ The .yml files have been formatted to use the above team names. If you would lik
 
 - [x] Using [`fleetctl`](https://fleetdm.com/docs/using-fleet/fleetctl-cli#fleetctl-cli), apply the following commands:
 
-`fleetctl apply --context <context> -f chainguard-detection-queries.yml`
-`fleetctl apply --context <context> -f chainguard-IR-queries.yml`
+`fleetctl apply --context <context> -f fleet_chainguard_queries.yml`
+
 
 ### Enable process events (evented table)
 https://fleetdm.com/guides/osquery-evented-tables-overview
