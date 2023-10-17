@@ -12,7 +12,7 @@ The teams feature is a Premium licensed feature in Fleet, but it allows the admi
 ### Create teams
 This can be done in the Fleet UI or progrmammatically via [REST API](https://fleetdm.com/docs/rest-api/rest-api#create-team) or [`fleetctl`](https://fleetdm.com/docs/using-fleet/fleetctl-cli#fleetctl-cli). Your testing scenarios may differ, but a starting approach would be to create a single team to transfer hosts into when running DART activities:
 
-- [x] create team 'Chainguard' 
+- [x] create team 'Workstations (canary)' 
 
 ### Import the queries to teams in Fleet
 The .yml files have been formatted to use the above team names. If you would like to use different team names, please modify the .yml files appropriately. 
@@ -25,17 +25,21 @@ The .yml files have been formatted to use the above team names. If you would lik
 ### Enable process events (evented table)
 https://fleetdm.com/guides/osquery-evented-tables-overview
 
-I had created a separate team (Chainguard) in the above step. Either enable evented tables as per the above article on the same "Chainguard" team, or if you'd like to only enable on a case by case basis, create a different team. In my test scenario, I just enabled events in the Chainguard team.
+I had created a separate team (Workstations (canary)) in the above step. Either enable evented tables as per the above article on the same "Workstations (canary)" team, or if you'd like to only enable on a case by case basis, create a different team. In my test scenario, I just enabled events in the Workstations (canary) team.
 
 #### Agent options
 ```
 command_line_flags:
   events_max: 50000
-  events_expiry: 3600
+  disable_audit: false
+  events_expiry: 86000
   disable_events: false
   events_optimize: true
   enable_file_events: true
+  audit_allow_fim_events: true
   disable_endpointsecurity: false
+  enable_ntfs_event_publisher: true
+  disable_endpointsecurity_fim: false
   ```
 
 ### Select queries and define frequency of execution
